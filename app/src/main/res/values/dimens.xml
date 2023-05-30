@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="large_margin">24dp</dimen>
+    <dimen name="largest_margin">32dp</dimen>
+
+    <dimen name="text_small_size">8sp</dimen>
+    <dimen name="text_normal_size">16sp</dimen>
+    <dimen name="text_large_size">24sp</dimen>
+    <dimen name="text_largest_size">32sp</dimen>
+
+    <dimen name="edit_text_height">57dp</dimen>
+    <dimen name="google_text_start">36dp</dimen>
+    <dimen name="register_height">55dp</dimen>
+    <dimen name="google_text_height_land">35dp</dimen>
+    <dimen name="register_height_land">40dp</dimen>
+    <dimen name="view_contacts_height">60dp</dimen>
+    <dimen name="photo_size">140dp</dimen>
+    <dimen name="edit_text_size">18sp</dimen>
+</resources>

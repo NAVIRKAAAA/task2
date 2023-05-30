@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="full_name">Full Name</string>
+    <string name="profession">Profession</string>
+    <string name="career">Career</string>
+    <string name="contacts">Contacts</string>
+    <string name="add_contacts">Add contacts</string>
+</resources>
