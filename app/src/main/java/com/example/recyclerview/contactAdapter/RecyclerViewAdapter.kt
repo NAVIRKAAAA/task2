@@ -7,12 +7,15 @@ import com.bumptech.glide.Glide
 import com.example.recyclerview.R
 import com.example.recyclerview.databinding.ItemUserBinding
 import com.example.recyclerview.model.User
-import com.example.recyclerview.viewModel.userViewModel
+import com.example.recyclerview.viewModel.UserViewModel
+import com.google.android.material.snackbar.Snackbar
+
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHolder>() {
     class UsersViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root)
-
     private val users = ArrayList<User>()
+    private val userViewModel = UserViewModel()
+    private var newUser: User? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemUserBinding.inflate(inflater, parent, false)
@@ -22,9 +25,20 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHo
     override fun getItemCount(): Int {
         return users.size
     }
-
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = users[position]
+        holder.binding.imageViewDelete.setOnClickListener {
+            userViewModel.deleteUser(holder.absoluteAdapterPosition)
+            notifyItemRemoved(holder.absoluteAdapterPosition)
+            updateUsers(userViewModel.getUserList())
+            Snackbar.make(it, "${user.name} has been removed",
+                Snackbar.LENGTH_LONG)
+                .setAction("Restore") {
+                    userViewModel.addUser(user, position)
+                    notifyItemInserted(position)
+                    updateUsers(userViewModel.getUserList())
+                }.show()
+        }
         with(holder.binding) {
             textViewName.text = user.name
             textViewCareer.text = user.career
@@ -42,8 +56,9 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHo
 
     }
 
-    fun setUsers(userList: List<User>) {
+    fun updateUsers(userList: ArrayList<User>) {
         users.clear()
         users.addAll(userList)
     }
+
 }
