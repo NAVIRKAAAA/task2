@@ -6,18 +6,21 @@ import com.example.recyclerview.model.User
 
 class UserViewModel : ViewModel() {
 
-    private val userList = ArrayList<User>()
+    private val users = ArrayList<User>()
+
     init {
-        userList.addAll(LocalUserData().getLocalContactsList())
+        users.addAll(LocalUserData().getLocalContactsList())
     }
+
     fun getUserList(): ArrayList<User> {
-        return userList
+        return users
     }
 
     fun deleteUser(index: Int) {
-        userList.removeAt(index)
+        users.removeAt(index)
     }
+
     fun addUser(user: User, position: Int) {
-        userList.add(position, user)
+        users.add(position, user)
     }
 }
