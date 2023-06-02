@@ -11,11 +11,10 @@ import com.example.recyclerview.viewModel.UserViewModel
 import com.google.android.material.snackbar.Snackbar
 
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHolder>() {
-    class UsersViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root)
+class RecyclerViewAdapter(private val userViewModel: UserViewModel) : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHolder>() {
+    class UsersViewHolder(val binding: ItemUserBinding):RecyclerView.ViewHolder(binding.root)
 
     private val users = ArrayList<User>()
-    private val userViewModel = UserViewModel()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -29,13 +28,13 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHo
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = users[position]
+
         holder.binding.imageViewDelete.setOnClickListener {
             val positionUser = holder.adapterPosition
-
+            println(positionUser)
             userViewModel.deleteUser(positionUser)
             notifyItemRemoved(positionUser)
             updateUsers(userViewModel.getUserList())
-
             Snackbar.make(
                 it, "${user.name} has been removed",
                 Snackbar.LENGTH_LONG
@@ -45,22 +44,19 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHo
                     notifyItemInserted(positionUser)
                     updateUsers(userViewModel.getUserList())
                 }.show()
+
         }
+
         with(holder.binding) {
             textViewName.text = user.name
             textViewCareer.text = user.career
-            if (user.photo.isNotBlank()) {
-                Glide.with(imageViewUserPhoto)
-                    .load(user.photo)
-                    .circleCrop()
-                    .placeholder(R.drawable.ic_user_photo)
-                    .error(R.drawable.ic_user_photo)
-                    .into(imageViewUserPhoto)
-            } else {
-                imageViewUserPhoto.setImageResource(R.drawable.ic_user_photo)
-            }
+            Glide.with(imageViewUserPhoto)
+                .load(user.photo)
+                .circleCrop()
+                .placeholder(R.drawable.ic_user_photo)
+                .error(R.drawable.ic_user_photo)
+                .into(imageViewUserPhoto)
         }
-
     }
 
     fun updateUsers(newUsers: ArrayList<User>) {
