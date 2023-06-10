@@ -11,8 +11,9 @@ import com.example.recyclerview.viewModel.UserViewModel
 import com.google.android.material.snackbar.Snackbar
 
 
-class RecyclerViewAdapter(private val userViewModel: UserViewModel) : RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHolder>() {
-    class UsersViewHolder(val binding: ItemUserBinding):RecyclerView.ViewHolder(binding.root)
+class RecyclerViewAdapter(private val userViewModel: UserViewModel) :
+    RecyclerView.Adapter<RecyclerViewAdapter.UsersViewHolder>() {
+    class UsersViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val users = ArrayList<User>()
 
@@ -22,16 +23,11 @@ class RecyclerViewAdapter(private val userViewModel: UserViewModel) : RecyclerVi
         return UsersViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return users.size
-    }
-
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = users[position]
 
         holder.binding.imageViewDelete.setOnClickListener {
             val positionUser = holder.adapterPosition
-            println(positionUser)
             userViewModel.deleteUser(positionUser)
             notifyItemRemoved(positionUser)
             updateUsers(userViewModel.getUserList())
@@ -44,7 +40,6 @@ class RecyclerViewAdapter(private val userViewModel: UserViewModel) : RecyclerVi
                     notifyItemInserted(positionUser)
                     updateUsers(userViewModel.getUserList())
                 }.show()
-
         }
 
         with(holder.binding) {
@@ -58,6 +53,8 @@ class RecyclerViewAdapter(private val userViewModel: UserViewModel) : RecyclerVi
                 .into(imageViewUserPhoto)
         }
     }
+
+    override fun getItemCount(): Int = users.size
 
     fun updateUsers(newUsers: ArrayList<User>) {
         users.clear()

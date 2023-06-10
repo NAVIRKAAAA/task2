@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="full_name">Повне ім\'я</string>
+    <string name="profession">Професія</string>
+    <string name="career">Кар\'єра</string>
+    <string name="contacts">Контакти</string>
+    <string name="add_contacts">Додати контакти</string>
+    <string name="acquainted">Давайте познайомимося</string>
+    <string name="fillOut">Заповніть профіль та перейдіть до програми!</string>
+    <string name="email">Електронна пошта</string>
+    <string name="password">Пароль</string>
+    <string name="e_mail">Електронна пошта</string>
+    <string name="remember_me">Запам\'ятати мене</string>
+    <string name="google">GOOGLE</string>
+    <string name="already_have_account">Вже маєте обліковий запис?</string>
+    <string name="sign_in">Увійти</string>
+    <string name="register">ЗАРЕЄСТРУВАТИСЬ</string>
+    <string name="by_clicking">Натискаючи "Зареєструватись", ви погоджуєтеся з нашими Умовами та Політикою конфіденційності</string>
+    <string name="or">або</string>
+    <string name="settings">Налаштування</string>
+    <string name="home_address">Домашня адреса</string>
+    <string name="view_my_contacts">ПЕРЕГЛЯНУТИ МОЇ КОНТАКТИ</string>
+    <string name="edit_profile">Редагувати профіль</string>
+    <string name="invalid_email">недійсна електронна пошта</string>
+    <string name="invalid_password">недійсний пароль</string>
+    <string name="logout">Вийти</string>
+</resources>

@@ -5,22 +5,15 @@ import com.example.recyclerview.data.LocalUserData
 import com.example.recyclerview.model.User
 
 class UserViewModel : ViewModel() {
-
     private val users = ArrayList<User>()
 
     init {
         users.addAll(LocalUserData().getLocalContactsList())
+
     }
 
-    fun getUserList(): ArrayList<User> {
-        return users
-    }
+    fun getUserList(): ArrayList<User> = users
 
-    fun deleteUser(index: Int) {
-        users.removeAt(index)
-    }
-
-    fun addUser(user: User, position: Int) {
-        users.add(position, user)
-    }
+    fun deleteUser(index: Int) = users.removeAt(index)
+    fun addUser(user: User, position: Int) = users.add(position, user)
 }

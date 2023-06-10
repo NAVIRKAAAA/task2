@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/acquainted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/example2"
+        android:gravity="center"
+        android:text="@string/acquainted"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_largest_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideLineHorizontal02" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFillOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/example2"
+        android:gravity="center"
+        android:text="@string/fillOut"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acquainted" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+
+        android:text="@string/e_mail"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/textInputEmail"
+        app:layout_constraintTop_toTopOf="@id/guideLineHorizontal035" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        app:boxBackgroundMode="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:inputType="textEmailAddress"
+            android:maxLength="30"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewInvalidEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:fontFamily="@font/example6"
+        android:text="@string/invalid_email"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_normal_size"
+        android:visibility="invisible"
+
+        app:layout_constraintRight_toRightOf="@id/buttonRegister"
+        app:layout_constraintTop_toBottomOf="@id/textInputEmail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/password"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/textInputEmail"
+        app:layout_constraintTop_toBottomOf="@id/textInputEmail" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        app:boxBackgroundMode="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewInvalidPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:fontFamily="@font/example6"
+        android:text="@string/invalid_password"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_normal_size"
+        android:visibility="invisible"
+
+        app:layout_constraintRight_toRightOf="@id/buttonRegister"
+        app:layout_constraintTop_toBottomOf="@id/textInputPassword" />
+
+    <CheckBox
+        android:id="@+id/checkboxRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/ic_check_box"
+        android:paddingStart="@dimen/small_margin"
+        android:text="@string/remember_me"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/buttonRegister"
+        app:layout_constraintTop_toBottomOf="@id/textInputPassword"
+        tools:ignore="Rtl,RtlSymmetry" />
+
+    <com.example.recyclerview.activities.CustomGoogleView
+        android:id="@+id/buttonGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:paddingEnd="@dimen/custom_padding"
+        app:buttonBackground="@drawable/bc_google"
+        app:buttonFontFamily="@font/example5"
+        app:buttonImage="@drawable/ic_google"
+        app:buttonText="@string/google"
+        app:buttonTextColor="@color/black"
+        app:buttonTextSize="@dimen/text_small_size"
+        app:imagePaddingLeft="@dimen/custom_padding"
+        app:layout_constraintBottom_toTopOf="@id/textViewOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:text="@string/or"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_size"
+        app:layout_constraintBottom_toTopOf="@id/buttonRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRegister"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/register_height"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:background="@drawable/bc_register"
+        android:fontFamily="@font/example6"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_size"
+        app:layout_constraintBottom_toTopOf="@id/textViewByClicking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewByClicking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/by_clicking"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_size"
+        app:layout_constraintBottom_toTopOf="@id/textViewHaveAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/textViewHaveAccount"
+        app:layout_constraintTop_toTopOf="@id/textViewHaveAccount" />
+
+    <TextView
+        android:id="@+id/textViewHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:text="@string/already_have_account"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineHorizontal02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineHorizontal035"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+</androidx.constraintlayout.widget.ConstraintLayout>
