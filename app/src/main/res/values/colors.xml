@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    default colors-->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    Background colors-->
+    <color name="background">#242235</color>
+    <color name="gray">#B2B2B3</color>
+
+<!--    Main app color-->
+    <color name="orange">#FB5E06</color>
+    <color name="red">#FF0000</color>
+    <color name="transparent">#00FFFFFF</color>
+</resources>
