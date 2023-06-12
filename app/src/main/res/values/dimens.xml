@@ -19,4 +19,7 @@
     <dimen name="photo_size">140dp</dimen>
     <dimen name="edit_text_size">18sp</dimen>
     <dimen name="custom_padding">120dp</dimen>
+    <dimen name="recycler_view_padding">170dp</dimen>
+    <dimen name="item_user_height">66dp</dimen>
+    <dimen name="user_career_size">12sp</dimen>
 </resources>

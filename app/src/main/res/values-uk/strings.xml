@@ -25,4 +25,6 @@
     <string name="invalid_email">недійсна електронна пошта</string>
     <string name="invalid_password">недійсний пароль</string>
     <string name="logout">Вийти</string>
+    <string name="s_has_been_removed">%s було видалено</string>
+    <string name="restore">Відновити</string>
 </resources>

@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="66dp"
-    android:layout_marginHorizontal="16dp"
+    android:layout_height="@dimen/item_user_height"
+    android:layout_marginHorizontal="@dimen/normal_margin"
     android:layout_marginTop="@dimen/small_margin">
 
     <View
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
 
         android:id="@+id/imageViewUserPhoto"
         android:layout_width="wrap_content"
@@ -48,11 +48,11 @@
         android:fontFamily="@font/example2"
         android:text="@string/career"
         android:textColor="@color/gray"
-        android:textSize="12sp"
+        android:textSize="@dimen/user_career_size"
         app:layout_constraintStart_toEndOf="@id/imageViewUserPhoto"
         app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

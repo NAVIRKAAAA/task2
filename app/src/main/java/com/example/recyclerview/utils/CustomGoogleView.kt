@@ -1,5 +1,4 @@
-package com.example.recyclerview.activities
-
+package com.example.recyclerview.utils
 
 import android.content.Context
 import android.content.res.TypedArray
@@ -11,7 +10,6 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.example.recyclerview.R
-
 
 class CustomGoogleView(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
 

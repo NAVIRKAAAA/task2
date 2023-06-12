@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CustomGoogleView" >
-        <attr name="buttonBackground" format="reference" />
-        <attr name="buttonFontFamily" format="reference" />
-
+        <!-- set text -->
         <attr name="buttonText" format="string"/>
         <attr name="buttonTextColor" format="color"/>
         <attr name="buttonTextSize" format="dimension"/>
+        <attr name="buttonFontFamily" format="reference" />
+        <attr name="buttonBackground" format="reference" />
 
+        <!-- set image -->
         <attr name="imagePaddingLeft" format="dimension" />
         <attr name="buttonImage" format="reference" />
     </declare-styleable>

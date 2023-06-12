@@ -1,24 +1,27 @@
-package com.example.recyclerview.fragments
+package com.example.recyclerview.ui.activities.fragments
 
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialogFragment
 import com.example.recyclerview.R
-import com.example.recyclerview.contactAdapter.RecyclerViewAdapter
-import com.example.recyclerview.model.User
+import com.example.recyclerview.ui.activities.contactAdapter.RecyclerViewAdapter
+import com.example.recyclerview.domain.model.localdataset.model.User
 import com.example.recyclerview.utils.Constants
-import com.example.recyclerview.viewModel.UserViewModel
+import com.example.recyclerview.ui.activities.activities.UserViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 
-class DialogFragment(private val userViewModel: UserViewModel) : AppCompatDialogFragment() {
-    private var adapter = RecyclerViewAdapter(userViewModel)
+class DialogFragment : AppCompatDialogFragment() {
 
+    private var userViewModel = UserViewModel()
+    fun setViewModel(userViewModel: UserViewModel) {
+        this.userViewModel = userViewModel
+    }
+    private var adapter = RecyclerViewAdapter()
     fun setAdapter(recyclerViewAdapter: RecyclerViewAdapter) {
         adapter = recyclerViewAdapter
     }
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
         val inflater = requireActivity().layoutInflater
