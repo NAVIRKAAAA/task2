@@ -1,4 +1,4 @@
-package com.example.recyclerview.ui.activities.activities
+package com.example.recyclerview.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.R
 import com.example.recyclerview.repository.UserItemClickListener
-import com.example.recyclerview.ui.activities.fragments.DialogFragment
-import com.example.recyclerview.ui.activities.contactAdapter.RecyclerViewAdapter
+import com.example.recyclerview.ui.fragments.DialogFragment
+import com.example.recyclerview.ui.contactAdapter.RecyclerViewAdapter
 import com.example.recyclerview.databinding.ActivityContactsBinding
-import com.example.recyclerview.domain.model.localdataset.model.User
+import com.example.recyclerview.domain.model.User
 import com.example.recyclerview.utils.Constants
 import com.example.recyclerview.utils.ext.animateVisibility
 import com.google.android.material.snackbar.Snackbar

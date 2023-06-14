@@ -1,12 +1,12 @@
-package com.example.recyclerview.ui.activities.contactAdapter
+package com.example.recyclerview.ui.contactAdapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.repository.UserItemClickListener
 import com.example.recyclerview.databinding.ItemUserBinding
-import com.example.recyclerview.domain.model.localdataset.model.User
-import com.example.recyclerview.ui.activities.activities.UserViewModel
+import com.example.recyclerview.domain.model.User
+import com.example.recyclerview.ui.activities.UserViewModel
 import com.example.recyclerview.utils.ext.loadImage
 
 

@@ -1,6 +1,6 @@
-package com.example.recyclerview.domain.model.localdataset.localdataset
+package com.example.recyclerview.domain.localuserdataset
 
-import com.example.recyclerview.domain.model.localdataset.model.User
+import com.example.recyclerview.domain.model.User
 
 class LocalUserData {
 

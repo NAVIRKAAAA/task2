@@ -1,4 +1,4 @@
-package com.example.recyclerview.domain.model.localdataset.model
+package com.example.recyclerview.domain.model
 
 import java.util.UUID
 

@@ -1,14 +1,14 @@
-package com.example.recyclerview.ui.activities.fragments
+package com.example.recyclerview.ui.fragments
 
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialogFragment
 import com.example.recyclerview.R
-import com.example.recyclerview.ui.activities.contactAdapter.RecyclerViewAdapter
-import com.example.recyclerview.domain.model.localdataset.model.User
+import com.example.recyclerview.ui.contactAdapter.RecyclerViewAdapter
+import com.example.recyclerview.domain.model.User
 import com.example.recyclerview.utils.Constants
-import com.example.recyclerview.ui.activities.activities.UserViewModel
+import com.example.recyclerview.ui.activities.UserViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 
